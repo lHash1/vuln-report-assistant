@@ -7,54 +7,62 @@
       "porta": 21,
       "protocolo": "tcp",
       "servico": "vsftpd 2.3.4",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "critico",
+      "justificativa": "Versão com backdoor conhecido que dá shell remoto sem autenticação. Além disso, o FTP pode permitir login anônimo e expõe credenciais em texto claro.",
+      "cves_que_conheco": [
+        "CVE-2011-2523"
+      ],
+      "fonte": "Memória",
+      "mitigacao": "Atualizar para uma versão legítima do vsftpd, desabilitar login anônimo e substituir por SFTP."
     },
     {
       "host": "192.168.227.128",
       "porta": 22,
       "protocolo": "tcp",
       "servico": "OpenSSH 4.7p1 Debian 8ubuntu1",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "baixo",
+      "justificativa": "Ao utilizar um algoritmo de criptografia de bloco no modo Cipher Block Chaining (CBC), facilita a recuperação, por atacantes remotos, de determinados dados em texto puro (plaintext) a partir de um bloco arbitrário de texto cifrado (ciphertext) em uma sessão SSH",
+      "cves_que_conheco": [
+        "CVE-2008-5161"
+      ],
+      "fonte": "NVD",
+      "mitigacao": "Realizar a atualização para uma versão onde a vulnerabilidade tenha sido corrigida."
     },
     {
       "host": "192.168.227.128",
       "porta": 23,
       "protocolo": "tcp",
       "servico": "Linux telnetd",
-      "risco": "",
-      "justificativa": "",
+      "risco": "critico",
+      "justificativa": "Telnet é um serviço sem criptografia, o que faz com que todos os dados que estejam sendo transmitidos através desse serviço estejam visíveis para qualquer um que tenha acesso à rede.",
       "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "fonte": "Memória, CWE",
+      "mitigacao": "Não mais utilizar o Telnet e passar a utilizar o SSH como alternativa que nesse caso possui criptografia."
     },
     {
       "host": "192.168.227.128",
       "porta": 25,
       "protocolo": "tcp",
       "servico": "Postfix smtpd",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "critico",
+      "justificativa": "Foi identificada uma falha nas versões 4.87 até 4.91 (inclusive) do Exim. A validação inadequada do endereço do destinatário na função deliver_message(), localizada em /src/deliver.c, pode levar à execução remota de comandos (RCE).",
+      "cves_que_conheco": [
+        "CVE-2019-10149"
+      ],
+      "fonte": "NVD",
+      "mitigacao": "Restrinja o encaminhamento de e-mails (Relay) para que o servidor aceite apenas mensagens destinadas aos seus próprios domínios ou provenientes de remetentes autenticados; Exija TLS. Torne o uso de STARTTLS obrigatório para autenticação e rejeite logins em texto puro (sem criptografia). Mantenha o envio de e-mails por clientes nas portas 587 / 465, em vez da porta 25."
     },
     {
       "host": "192.168.227.128",
       "porta": 53,
       "protocolo": "tcp",
       "servico": "ISC BIND 9.4.2",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
+      "risco": "alto",
+      "justificativa": "Vulnerabilidade não especificada no ISC BIND 9.3.5-P2-W1, 9.4.2-P2-W1 e 9.5.0-P2-W1, em sistemas Windows, permite que atacantes remotos provoquem uma negação de serviço (DoS), causando a interrupção do manipulador de clientes UDP, por meio de vetores de ataque desconhecidos.",
+      "cves_que_conheco": [
+        "CVE-2008-4163"
+      ],
+      "fonte": "NVD, CWE",
       "mitigacao": ""
     },
     {
@@ -62,198 +70,81 @@
       "porta": 80,
       "protocolo": "tcp",
       "servico": "Apache httpd 2.2.8",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "critico",
+      "justificativa": "No Apache httpd 2.2.x, em versões anteriores à 2.2.33, e 2.4.x, em versões anteriores à 2.4.26, o uso da função ap_get_basic_auth_pw() por módulos de terceiros fora da fase de autenticação pode permitir que os requisitos de autenticação sejam contornados (bypass de autenticação).",
+      "cves_que_conheco": [
+        "CVE-2017-3167"
+      ],
+      "fonte": "Memória, NVD",
+      "mitigacao": "Os usuários desta versão do Apache devem atualizar para a versão mais nova assim que possível."
     },
     {
       "host": "192.168.227.128",
       "porta": 111,
       "protocolo": "tcp",
-      "servico": "2",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "servico": "rcpbind 2",
+      "risco": "alto",
+      "justificativa": "O 389 Directory Server, presente no Red Hat Enterprise Linux Desktop 6 até 7, Red Hat Enterprise Linux HPC Node 6 até 7, Red Hat Enterprise Linux Server 6 até 7 e Red Hat Enterprise Linux Workstation 6 até 7, permite que atacantes remotos infiram a existência de objetos componentes RDN.",
+      "cves_que_conheco": [
+        "CVE-2016-4992"
+      ],
+      "fonte": "NVD",
+      "mitigacao": "Deve-se atualizar o software o quanto antes através das ferramentas fornecidas pela Red Hat Enterpise."
     },
     {
       "host": "192.168.227.128",
       "porta": 139,
       "protocolo": "tcp",
       "servico": "Samba smbd 3.X - 4.X",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "critico",
+      "justificativa": "Foi identificada uma falha decorrente do uso de um ponteiro não inicializado no daemon do Samba (smbd). Um cliente Samba malicioso poderia enviar pacotes Netlogon especialmente elaborados que, ao serem processados pelo smbd, poderiam potencialmente levar à execução arbitrária de código com os privilégios do usuário que executa o smbd (por padrão, o usuário root).",
+      "cves_que_conheco": [
+        "CVE-2015-0240"
+      ],
+      "fonte": "RedHat, NVD",
+      "mitigacao": "Nas versões 4.0.0 e posteriores do Samba, adicione a seguinte linha: rpc_server:netlogon=disabled à seção [global] do arquivo smb.conf. Para as versões 3.6.x e anteriores do Samba, essa solução alternativa não está disponível (Técnica de mitigação fornecida pela própria RedHat)."
     },
     {
       "host": "192.168.227.128",
       "porta": 445,
       "protocolo": "tcp",
       "servico": "Samba smbd 3.X - 4.X",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "critico",
+      "justificativa": "Foi identificada uma falha decorrente do uso de um ponteiro não inicializado no daemon do Samba ('smbd'). Um cliente Samba malicioso poderia enviar pacotes Netlogon especialmente elaborados que, ao serem processados pelo 'smbd', poderiam potencialmente levar à execução arbitrária de código com os privilégios do usuário que executa o 'smbd' (por padrão, o usuário 'root').",
+      "cves_que_conheco": [
+        "CVE-2015-0240"
+      ],
+      "fonte": "RedHat, NVD",
+      "mitigacao": "Nas versões 4.0.0 e posteriores do Samba, adicione a seguinte linha: rpc_server:netlogon=disabled à seção [global] do arquivo smb.conf (Técnica de mitigação fornecida pela própria RedHat)."
     },
     {
       "host": "192.168.227.128",
       "porta": 512,
       "protocolo": "tcp",
       "servico": "netkit-rsh rexecd",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 513,
-      "protocolo": "tcp",
-      "servico": "login",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 514,
-      "protocolo": "tcp",
-      "servico": "Netkit rshd",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 1099,
-      "protocolo": "tcp",
-      "servico": "GNU Classpath grmiregistry",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 1524,
-      "protocolo": "tcp",
-      "servico": "Metasploitable root shell",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 2049,
-      "protocolo": "tcp",
-      "servico": "2-4",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 2121,
-      "protocolo": "tcp",
-      "servico": "ProFTPD 1.3.1",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 3306,
-      "protocolo": "tcp",
-      "servico": "MySQL 5.0.51a-3ubuntu5",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 5432,
-      "protocolo": "tcp",
-      "servico": "PostgreSQL DB 8.3.0 - 8.3.7",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 5900,
-      "protocolo": "tcp",
-      "servico": "VNC",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 6000,
-      "protocolo": "tcp",
-      "servico": "X11",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 6667,
-      "protocolo": "tcp",
-      "servico": "UnrealIRCd",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 8009,
-      "protocolo": "tcp",
-      "servico": "Apache Jserv",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
-    },
-    {
-      "host": "192.168.227.128",
-      "porta": 8180,
-      "protocolo": "tcp",
-      "servico": "Apache Tomcat/Coyote JSP engine 1.1",
-      "risco": "",
-      "justificativa": "",
-      "cves_que_conheco": [],
-      "fonte": "",
-      "mitigacao": ""
+      "risco": "critico",
+      "justificativa": "O 'netkit-rcp', presente no pacote 'rsh-client' versão 0.17-24, permite a injeção de comandos por meio de nomes de arquivos, pois utiliza o '/bin/sh' através da função 'susystem'. Trata-se de um problema relacionado às vulnerabilidades CVE-2006-0225, CVE-2019-7283 e CVE-2020-15778.",
+      "cves_que_conheco": [
+        "CVE-2023-38336"
+      ],
+      "fonte": "NVD",
+      "mitigacao": "Considere todas as entradas como potencialmente maliciosas. Utilize uma estratégia de validação de entrada baseada na aceitação apenas de dados comprovadamente válidos (accept known good), ou seja, utilize uma lista de entradas permitidas que estejam estritamente em conformidade com as especificações. Rejeite qualquer entrada que não esteja em total conformidade com as especificações ou transforme-a em um formato que esteja."
     }
-  ]
+  ],
+  "escopo": {
+    "criterio": "primeiras 10 portas abertas em ordem numérica",
+    "portas": [
+      21,
+      22,
+      23,
+      25,
+      53,
+      80,
+      111,
+      139,
+      445,
+      512
+    ],
+    "total_portas_abertas_no_scan": 23
+  }
 }
