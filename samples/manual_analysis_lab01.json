@@ -1,0 +1,259 @@
+{
+  "lab": "Metasploitable 2 (configuração padrão)",
+  "analista": "Pedro Luz",
+  "achados": [
+    {
+      "host": "192.168.227.128",
+      "porta": 21,
+      "protocolo": "tcp",
+      "servico": "vsftpd 2.3.4",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 22,
+      "protocolo": "tcp",
+      "servico": "OpenSSH 4.7p1 Debian 8ubuntu1",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 23,
+      "protocolo": "tcp",
+      "servico": "Linux telnetd",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 25,
+      "protocolo": "tcp",
+      "servico": "Postfix smtpd",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 53,
+      "protocolo": "tcp",
+      "servico": "ISC BIND 9.4.2",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 80,
+      "protocolo": "tcp",
+      "servico": "Apache httpd 2.2.8",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 111,
+      "protocolo": "tcp",
+      "servico": "2",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 139,
+      "protocolo": "tcp",
+      "servico": "Samba smbd 3.X - 4.X",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 445,
+      "protocolo": "tcp",
+      "servico": "Samba smbd 3.X - 4.X",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 512,
+      "protocolo": "tcp",
+      "servico": "netkit-rsh rexecd",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 513,
+      "protocolo": "tcp",
+      "servico": "login",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 514,
+      "protocolo": "tcp",
+      "servico": "Netkit rshd",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 1099,
+      "protocolo": "tcp",
+      "servico": "GNU Classpath grmiregistry",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 1524,
+      "protocolo": "tcp",
+      "servico": "Metasploitable root shell",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 2049,
+      "protocolo": "tcp",
+      "servico": "2-4",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 2121,
+      "protocolo": "tcp",
+      "servico": "ProFTPD 1.3.1",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 3306,
+      "protocolo": "tcp",
+      "servico": "MySQL 5.0.51a-3ubuntu5",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 5432,
+      "protocolo": "tcp",
+      "servico": "PostgreSQL DB 8.3.0 - 8.3.7",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 5900,
+      "protocolo": "tcp",
+      "servico": "VNC",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 6000,
+      "protocolo": "tcp",
+      "servico": "X11",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 6667,
+      "protocolo": "tcp",
+      "servico": "UnrealIRCd",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 8009,
+      "protocolo": "tcp",
+      "servico": "Apache Jserv",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    },
+    {
+      "host": "192.168.227.128",
+      "porta": 8180,
+      "protocolo": "tcp",
+      "servico": "Apache Tomcat/Coyote JSP engine 1.1",
+      "risco": "",
+      "justificativa": "",
+      "cves_que_conheco": [],
+      "fonte": "",
+      "mitigacao": ""
+    }
+  ]
+}
