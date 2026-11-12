@@ -1,0 +1,19 @@
+# Transcrito manualmente de ubuntu.com/security e security-tracker.debian.org, depois da execução da IA.
+# O modelo nunca viu estes dados.
+
+CVE-2011-3192 (apache2), Ubuntu Priority: Medium
+  8.04 LTS hardy: corrigido em 2.2.8-1ubuntu0.21
+  Instalado na VM (apache2-mpm-prefork): 2.2.8-1ubuntu0.15
+
+CVE-2012-1667 (bind9), Ubuntu Priority: Medium
+  8.04 LTS hardy: corrigido em 1:9.4.2.dfsg.P2-2ubuntu0.10
+  Instalado na VM (bind9): 1:9.4.2-10
+
+Debian tracker, CVE-2012-1667: correções listadas só de squeeze em diante (DSA-2486-1); sem entrada para a release equivalente à da VM.
+
+CVE-2007-2447 (samba), Ubuntu Priority: Medium
+  Descrição (resumo): Samba 3.0.0 até 3.0.25rc3; execução de comandos via metacaracteres do shell em SamrChangePassword quando "username map script" está habilitado.
+  Releases listadas na página: 7.04 feisty (3.0.24-2ubuntu1.2), 6.10 edgy (3.0.22-1ubuntu4.2), 6.06 LTS dapper (3.0.22-1ubuntu3.3)
+  8.04 hardy: sem entrada na página.
+  Instalado na VM: samba 3.0.20-0.1ubuntu1
+  Conclusão: o rastreador não confirma nem exclui correção para esta build; as versões listadas são de outras releases e não foram comparadas.

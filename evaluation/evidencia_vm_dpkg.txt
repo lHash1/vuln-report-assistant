@@ -1,0 +1,12 @@
+# Coletado manualmente na VM Metasploitable 2 (msfadmin), depois da execução da IA.
+# Transcrito do terminal da VM. Comando: dpkg -l | grep -E 'apache2|samba|bind9' | awk '{print $2, $3}'
+apache2 2.2.8-1
+apache2-mpm-prefork 2.2.8-1ubuntu0.15
+apache2-utils 2.2.8-1ubuntu0.15
+apache2.2-common 2.2.8-1ubuntu0.15
+bind9 1:9.4.2-10
+bind9-host 1:9.4.2-10
+libapache2-mod-php5 5.2.4-2ubuntu5.24
+libbind9-30 1:9.4.2-10
+samba 3.0.20-0.1ubuntu1
+samba-common 3.0.20-0.1ubuntu1

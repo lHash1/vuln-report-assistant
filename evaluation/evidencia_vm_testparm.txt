@@ -1,0 +1,3 @@
+# Coletado manualmente na VM Metasploitable 2 (msfadmin), depois da execução da IA.
+# Comando: testparm -s 2>/dev/null | grep -i "username map"
+username map script = /etc/samba/scripts/mapusers.sh

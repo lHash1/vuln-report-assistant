@@ -1,0 +1,8 @@
+CVE-2008-5161: v2 2.6  AV:N/AC:H/Au:N/C:P/I:N/A:N
+CVE-2007-2447: v2 6.0  AV:N/AC:M/Au:S/C:P/I:P/A:P
+CVE-2012-1667: v2 8.5  AV:N/AC:L/Au:N/C:P/I:N/A:C
+CVE-2011-3192: v2 7.8  AV:N/AC:L/Au:N/C:N/I:N/A:C
+CVE-2012-1182: HTTP 503 (espere um minuto e rode de novo)
+
+# Nota: a consulta automática de CVE-2012-1182 retornou HTTP 503 e não foi repetida.
+# A nota v2 10.0 dessa CVE foi lida manualmente no NVD antes. Ela não sustenta nenhuma classificação (CVE não confirmada).
