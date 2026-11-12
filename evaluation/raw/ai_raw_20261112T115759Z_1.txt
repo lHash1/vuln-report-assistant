@@ -1,0 +1,77 @@
+{
+  "resumo_executivo": "Identificamos que o ambiente possui diversos serviços desatualizados e protocolos inseguros expostos na rede. O problema mais urgente está no serviço de transferência de arquivos (porta 21), que utiliza uma versão com alto risco de permitir o controle total do sistema por pessoas não autorizadas. Além disso, existem canais de acesso remoto antigos que enviam senhas sem nenhuma proteção pela rede. Recomendamos priorizar a desativação desses canais inseguros e a atualização imediata do sistema de arquivos para evitar invasões.",
+  "achados": [
+    {
+      "porta": "21",
+      "risco": "critico",
+      "justificativa": "A versão detectada vsftpd 2.3.4 é candidata a conter uma porta dos fundos (backdoor) conhecida que permite execução remota de comandos. Por se tratar de uma detecção por banner, a vulnerabilidade precisa ser confirmada no ambiente.",
+      "cves_citados": [
+        "CVE-2011-2523"
+      ],
+      "mitigacao": "Atualize o serviço vsftpd para uma versão segura e suportada ou desative o acesso FTP."
+    },
+    {
+      "porta": "22",
+      "risco": "alto",
+      "justificativa": "A versão 4.7p1 do OpenSSH é antiga e candidata a diversas falhas de segurança conhecidas. Como a identificação foi feita via banner, é necessária a validação para confirmar se correções não foram aplicadas manualmente.",
+      "cves_citados": [],
+      "mitigacao": "Atualize o pacote OpenSSH para a versão mais recente disponibilizada pelo mantenedor do sistema."
+    },
+    {
+      "porta": "23",
+      "risco": "alto",
+      "justificativa": "A versão do serviço não foi informada no scan. O risco elevado decorre do próprio protocolo Telnet, que transmite credenciais e dados em texto claro sem criptografia.",
+      "cves_citados": [],
+      "mitigacao": "Desative o serviço Telnet e utilize exclusivamente o protocolo SSH para administração remota."
+    },
+    {
+      "porta": "25",
+      "risco": "baixo",
+      "justificativa": "A versão do Postfix não foi informada pelo scan, impedindo a verificação de vulnerabilidades específicas do produto. O risco é baixo e associado apenas à exposição do serviço de e-mail sem maiores detalhes de configuração.",
+      "cves_citados": [],
+      "mitigacao": "Garantir que o serviço exija conexões criptografadas (TLS) e restringir o acesso via firewall."
+    },
+    {
+      "porta": "53",
+      "risco": "medio",
+      "justificativa": "A versão 9.4.2 do ISC BIND é bastante defasada e candidata a falhas de negação de serviço e envenenamento de cache. A vulnerabilidade é apenas potencial, pois depende de confirmação além do banner de versão.",
+      "cves_citados": [],
+      "mitigacao": "Atualize o software ISC BIND para a versão estável atual."
+    },
+    {
+      "porta": "80",
+      "risco": "medio",
+      "justificativa": "O servidor executa a versão legada Apache httpd 2.2.8, candidata a falhas conhecidas do servidor web. Por ser uma detecção por banner, o impacto real deve ser verificado.",
+      "cves_citados": [],
+      "mitigacao": "Atualize o servidor Apache HTTP para a versão mais recente mantida."
+    },
+    {
+      "porta": "111",
+      "risco": "medio",
+      "justificativa": "O produto específico não foi informado no scan, apenas a versão do protocolo rpcbind. O risco advém do próprio serviço mapeador de RPC expor informações da estrutura de portas da máquina a terceiros.",
+      "cves_citados": [],
+      "mitigacao": "Restrinja o acesso à porta 111 via firewall para ser acessível apenas por redes confiáveis."
+    },
+    {
+      "porta": "139",
+      "risco": "medio",
+      "justificativa": "O scan retornou apenas um intervalo genérico de versões (3.X - 4.X), não permitindo identificar a versão exata do Samba. O risco decorre do serviço de compartilhamento de arquivos estar exposto na rede.",
+      "cves_citados": [],
+      "mitigacao": "Bloqueie o acesso externo ao serviço SMB no firewall e configure controles de acesso estritos."
+    },
+    {
+      "porta": "445",
+      "risco": "medio",
+      "justificativa": "A versão exata não foi informada, constando apenas a faixa genérica 3.X - 4.X para o Samba. O risco está associado ao protocolo SMB exposto, frequentemente alvo de varreduras e tentativas de exploração.",
+      "cves_citados": [],
+      "mitigacao": "Restrinja o tráfego da porta 445 na rede e mantenha o Samba atualizado."
+    },
+    {
+      "porta": "512",
+      "risco": "alto",
+      "justificativa": "A versão do produto não foi informada no scan. O risco elevado é devido ao uso do protocolo herdado rexec, que possui autenticação fraca e transmite dados em texto claro.",
+      "cves_citados": [],
+      "mitigacao": "Desative o serviço rexecd e migre os processos automáticos para utilização de chaves SSH."
+    }
+  ]
+}
