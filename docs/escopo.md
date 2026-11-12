@@ -11,7 +11,7 @@ A análise manual de referência e a avaliação da IA cobrem apenas as **10 pri
 O critério (as 10 primeiras portas por ordem numérica) foi fixado **antes** de executar o modelo de IA e não depende de nenhum resultado. O esqueleto original com 23 portas foi commitado antes da redução, e a decisão está registrada no histórico do Git.
 
 ## Como a análise de referência foi produzida
-- Feita por mim, sem uso de IA, a partir de fontes públicas (NVD com busca por CPE, Exploit-DB/searchsploit, CWE/MITRE) e conhecimento prévio.
+- Pesquisa feita por mim a partir de fontes públicas. O método de classificação (pelo CVE mais grave associado ao serviço) foi sugerido por um assistente de IA. A porta 21 foi influenciada por um assistente antes da escrita.
 - Commitada **antes** da execução do modelo, e não é editada depois disso. Correções ficam em arquivo separado.
 - As portas 139 e 445 compartilham o mesmo serviço (Samba) e a mesma causa raiz, então seus resultados não são independentes.
 
