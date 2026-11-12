@@ -1,0 +1,115 @@
+{
+  "regra": "CVSS v2: critico 9.0-10.0; alto 7.0-8.9; medio 4.0-6.9; baixo <4.0. Definida apos a pesquisa inicial. Portas sem CVE aplicavel: julgamento por CWE, reportado a parte. CVE nao confirmado nao sustenta classificacao.",
+  "proveniencia": "Evidencias coletadas depois da execucao da IA; o modelo nunca as viu. A analise original (commit 936cd74) nao foi alterada.",
+  "portas": [
+    {
+      "porta": 21,
+      "original": "critico",
+      "risco_corrigido": "critico",
+      "cves": [
+        "CVE-2011-2523"
+      ],
+      "score_v2": 10.0,
+      "status": "determinado",
+      "fonte": "NVD (versao exata do vsftpd)"
+    },
+    {
+      "porta": 22,
+      "original": "baixo",
+      "risco_corrigido": "baixo",
+      "cves": [
+        "CVE-2008-5161"
+      ],
+      "score_v2": 2.6,
+      "status": "determinado",
+      "fonte": "NVD; evidencia_ssh_algos.txt (cifras CBC oferecidas); NVD v2 2.6 (evidencia_nvd_v2.txt)",
+      "vetor_v2": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+    },
+    {
+      "porta": 23,
+      "original": "critico",
+      "risco_corrigido": null,
+      "cves": [],
+      "status": "julgamento_cwe",
+      "fonte": "CWE (texto claro); sem CVE na regra"
+    },
+    {
+      "porta": 25,
+      "original": "critico",
+      "risco_corrigido": null,
+      "cves": [],
+      "status": "indeterminado",
+      "fonte": "versao do Postfix desconhecida; CVE original e do Exim"
+    },
+    {
+      "porta": 53,
+      "original": "alto",
+      "risco_corrigido": "alto",
+      "cves": [
+        "CVE-2012-1667"
+      ],
+      "score_v2": 8.5,
+      "status": "determinado",
+      "fonte": "NVD; kb.isc.org (faixa 9.0.x-9.6.x); evidencia_dns_recursion.txt (UDP); evidencia_vm_dpkg.txt; rastreador Ubuntu 8.04 (corrigido em 1:9.4.2.dfsg.P2-2ubuntu0.10, instalado 1:9.4.2-10); evidencia_trackers_ubuntu.txt"
+    },
+    {
+      "porta": 80,
+      "original": "critico",
+      "risco_corrigido": "alto",
+      "cves": [
+        "CVE-2011-3192"
+      ],
+      "score_v2": 7.8,
+      "status": "determinado",
+      "fonte": "NVD; evidencia_vm_dpkg.txt (apache2 2.2.8-1ubuntu0.15); rastreador Ubuntu 8.04 (corrigido em 2.2.8-1ubuntu0.21, instalado 2.2.8-1ubuntu0.15); evidencia_trackers_ubuntu.txt",
+      "observacao": "Apenas DoS; Ubuntu classifica como Medium. A regra por nota v2 ignora o tipo de impacto."
+    },
+    {
+      "porta": 111,
+      "original": "alto",
+      "risco_corrigido": null,
+      "cves": [],
+      "status": "indeterminado",
+      "fonte": "rpcbind 2 e a versao do protocolo, nao do produto; CVE original e do 389 Directory Server"
+    },
+    {
+      "porta": 139,
+      "original": "critico",
+      "risco_corrigido": "medio",
+      "cves": [
+        "CVE-2007-2447"
+      ],
+      "score_v2": 6.0,
+      "vetor_v2": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+      "status": "determinado",
+      "limite_inferior": true,
+      "cves_nao_confirmados": [
+        "CVE-2012-1182"
+      ],
+      "fonte": "NVD; searchsploit 16320 (Samba 3.0.20 < 3.0.25rc3); evidencia_smb_os_discovery.txt; evidencia_vm_testparm.txt (username map script ativo); evidencia_vm_dpkg.txt (samba 3.0.20-0.1ubuntu1)",
+      "observacao": "Excecao a triagem: se o vetor for Au:S, falha no criterio 2, mas foi incluido por exploit publico e configuracao confirmada. CVE-2012-1182: faixa do NVD inclui 3.0.20, advisory do fornecedor nao verificado, rastreador Debian sem entrada para 3.0.x. Vetor v2 tem Au:S: a CVE reprova os critérios de triagem (nota<7.0, Au:N); entra como exceção explícita pós-hoc."
+    },
+    {
+      "porta": 445,
+      "original": "critico",
+      "risco_corrigido": "medio",
+      "cves": [
+        "CVE-2007-2447"
+      ],
+      "score_v2": 6.0,
+      "status": "determinado",
+      "limite_inferior": true,
+      "fonte": "idem 139 (mesma causa, nao independente)",
+      "vetor_v2": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
+      "observacao": "Vetor v2 tem Au:S: a CVE reprova os critérios de triagem (nota<7.0, Au:N); entra como exceção explícita pós-hoc."
+    },
+    {
+      "porta": 512,
+      "original": "critico",
+      "risco_corrigido": null,
+      "cves": [],
+      "status": "julgamento_cwe",
+      "fonte": "CWE (texto claro, autenticacao fraca); CVE original e do cliente rcp, nao do rexecd"
+    }
+  ]
+}
