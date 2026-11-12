@@ -1,0 +1,13 @@
+# Nmap 7.98 scan initiated Thu Nov 12 08:37:56 2026 as: /usr/lib/nmap/nmap --privileged -p 22 --script ssh-auth-methods --script-args=ssh.user=msfadmin -oN evaluation/evidencia_ssh_auth_methods.txt 192.168.227.128
+Nmap scan report for 192.168.227.128
+Host is up (0.00017s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+MAC Address: 00:0C:29:9B:4A:EA (VMware)
+
+# Nmap done at Thu Nov 12 08:38:07 2026 -- 1 IP address (1 host up) scanned in 11.24 seconds

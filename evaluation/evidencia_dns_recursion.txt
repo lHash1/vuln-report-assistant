@@ -1,0 +1,10 @@
+# Nmap 7.98 scan initiated Thu Nov 12 08:38:15 2026 as: /usr/lib/nmap/nmap --privileged -sU -p 53 --script dns-recursion -oN evaluation/evidencia_dns_recursion.txt 192.168.227.128
+Nmap scan report for 192.168.227.128
+Host is up (0.00022s latency).
+
+PORT   STATE SERVICE
+53/udp open  domain
+|_dns-recursion: Recursion appears to be enabled
+MAC Address: 00:0C:29:9B:4A:EA (VMware)
+
+# Nmap done at Thu Nov 12 08:38:17 2026 -- 1 IP address (1 host up) scanned in 2.25 seconds
