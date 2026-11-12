@@ -1,0 +1,43 @@
+# Nmap 7.98 scan initiated Thu Nov 12 09:20:41 2026 as: /usr/lib/nmap/nmap --privileged -p 22 --script ssh2-enum-algos -oN evaluation/evidencia_ssh_algos.txt 192.168.227.128
+Nmap scan report for 192.168.227.128
+Host is up (0.00013s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+| ssh2-enum-algos: 
+|   kex_algorithms: (4)
+|       diffie-hellman-group-exchange-sha256
+|       diffie-hellman-group-exchange-sha1
+|       diffie-hellman-group14-sha1
+|       diffie-hellman-group1-sha1
+|   server_host_key_algorithms: (2)
+|       ssh-rsa
+|       ssh-dss
+|   encryption_algorithms: (13)
+|       aes128-cbc
+|       3des-cbc
+|       blowfish-cbc
+|       cast128-cbc
+|       arcfour128
+|       arcfour256
+|       arcfour
+|       aes192-cbc
+|       aes256-cbc
+|       rijndael-cbc@lysator.liu.se
+|       aes128-ctr
+|       aes192-ctr
+|       aes256-ctr
+|   mac_algorithms: (7)
+|       hmac-md5
+|       hmac-sha1
+|       umac-64@openssh.com
+|       hmac-ripemd160
+|       hmac-ripemd160@openssh.com
+|       hmac-sha1-96
+|       hmac-md5-96
+|   compression_algorithms: (2)
+|       none
+|_      zlib@openssh.com
+MAC Address: 00:0C:29:9B:4A:EA (VMware)
+
+# Nmap done at Thu Nov 12 09:20:43 2026 -- 1 IP address (1 host up) scanned in 2.21 seconds
